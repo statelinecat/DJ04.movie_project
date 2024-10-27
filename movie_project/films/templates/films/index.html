@@ -6,4 +6,21 @@
 
 {% block content %}
   <h1>{{ title }}</h1>
+{% if films %}
+    {% for film in films %}
+        <div class="card">
+              <div class="card" style="width: 100%; max-width: 100%;">
+              <div class="card-body">
+                <h5 class="card-title">{{ film.name }}</h5>
+                <p class="card-text">{{ film.description }}</p>
+                <h5 class="card-title">Рецензия</h5>
+                <p class="card-text">{{ film.review }}</p>
+<!--                <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>-->
+              </div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Фильмов пока нет</p>
+{% endif %}
 {% endblock %}
